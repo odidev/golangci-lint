@@ -5,6 +5,7 @@ on:
       - v*
     branches:
       - master
+      - arm_support
   pull_request:
 jobs:
   vulns:

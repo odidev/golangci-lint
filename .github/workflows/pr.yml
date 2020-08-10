@@ -6,6 +6,7 @@ on:
       - v*
     branches:
       - master
+      - arm_support
   pull_request:
 jobs:
   # We already run the current golangci-lint in tests, but here we test

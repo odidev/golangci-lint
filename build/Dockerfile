@@ -1,5 +1,7 @@
 FROM golang:1.14
 
 # don't place it into $GOPATH/bin because Drone mounts $GOPATH as volume
-COPY golangci-lint /usr/bin/
+RUN git clone https://github.com/odidev/golangci-lint
+WORKDIR golangci-lint
+RUN go build -o /usr/bin/golangci-lint ./cmd/golangci-lint/main.go
 CMD ["golangci-lint"]
