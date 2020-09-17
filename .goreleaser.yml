@@ -3,7 +3,7 @@ project_name: golangci-lint
 
 release:
   github:
-    owner: golangci
+    owner: odidev
     name: golangci-lint
 
 builds:
@@ -63,25 +63,9 @@ changelog:
     - Merge pull request
     - Merge branch
 
-dockers:
-  - dockerfile: build/Dockerfile
-    binaries:
-      - golangci-lint
-    image_templates:
-      - "golangci/golangci-lint:latest"
-      - "golangci/golangci-lint:{{ .Tag }}"
-      - "golangci/golangci-lint:v{{ .Major }}.{{ .Minor }}"
-  - dockerfile: build/Dockerfile.alpine
-    binaries:
-      - golangci-lint
-    image_templates:
-      - "golangci/golangci-lint:latest-alpine"
-      - "golangci/golangci-lint:{{ .Tag }}-alpine"
-      - "golangci/golangci-lint:v{{ .Major }}.{{ .Minor }}-alpine"
-
 brews:
   - tap:
-      owner: golangci
+      owner: odidev
       name: homebrew-tap
     folder: Formula
     homepage: https://golangci.com
